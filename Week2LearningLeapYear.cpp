@@ -12,11 +12,13 @@ bool IsLeapYear(unsigned short int currentYear);
 unsigned short int GetCurrentYear();
 void DisplayYearMessage(bool isLeapYear, unsigned short int currentYear);
 
-bool IsLeapYear(unsigned short int currentYear) {
+bool IsLeapYear(unsigned short int currentYear) 
+{
 	return (currentYear % 4 == 0) && ((currentYear % 100 != 0) || currentYear % 400 == 0);
 }
 
-unsigned short int GetCurrentYear() {
+unsigned short int GetCurrentYear() 
+{
 	// current date/time based on current system
 	time_t currentTime = time(0);
 
@@ -26,13 +28,15 @@ unsigned short int GetCurrentYear() {
 	return baseYear + localTime.tm_year;
 }
 
-void DisplayYearMessage(bool isLeapYear, unsigned short int currentYear) {
+void DisplayYearMessage(bool isLeapYear, unsigned short int currentYear) 
+{
 	std::string currentYearText = isLeapYear ? "" : "NOT ";
 
 	cout << "The current year of " << currentYear << " is " << currentYearText << "a leap year.";
 }
 
-int main() {
+int main() 
+{
 	unsigned short int currentYear = GetCurrentYear();
 
 	// testing various inputs
